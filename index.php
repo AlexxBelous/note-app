@@ -1,2 +1,2 @@
 <?php
-require_once "views/index.view.php";
+require_once "index.view.php";
