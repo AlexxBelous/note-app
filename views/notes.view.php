@@ -14,6 +14,9 @@
                 </li>
             <?php endforeach; ?>
         </ul>
+        <p class="mt-6">
+            <a class="text-blue-500 hover:underline" href="/notes/create">Create Note</a>
+        </p>
     </div>
 </main>
 <?php require('partials/footer.php') ?>
