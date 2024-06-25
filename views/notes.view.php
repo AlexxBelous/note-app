@@ -9,7 +9,7 @@
             <?php foreach ($notes as $note) : ?>
                 <li>
                     <a class="text-blue-500 hover:underline" href="/note?id=<?php echo $note['id'] ?>">
-                        <?php echo $note['body'] ?>
+                        <?php echo htmlspecialchars($note['body'])  ?>
                     </a>
                 </li>
             <?php endforeach; ?>

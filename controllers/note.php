@@ -5,7 +5,7 @@ $db = new Database($config['database']);
 
 
 $heading = 'Single Note';
-$currentUserId = 3;
+$currentUserId = 1;
 
 
 $note = $db->query("select * from notes where id = :id", [
