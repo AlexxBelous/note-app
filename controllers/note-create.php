@@ -1,17 +1,17 @@
 <?php
+require "Validator.php";
 $config = require('config.php');
 $db = new Database($config['database']);
 $heading = 'Note Create';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $errors = [];
-    if(strlen($_POST['body']) === 0) {
-        $errors['body']  = 'A body is required';
+
+    if(! Validator::string($_POST['body'], 1, 100)) {
+        $errors['body']  = 'A body of no more than 100 characters and body required';
     }
 
-    if(strlen($_POST['body']) > 1000) {
-        $errors['body']  = 'Sorry, but the text you entered in the field is too long.';
-    }
     if(empty($errors)) {
         $db->query('INSERT INTO notes (body, user_id) VALUES (:body, :user_id);)', [
             'body' => $_POST['body'],
