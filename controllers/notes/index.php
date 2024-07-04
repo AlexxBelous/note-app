@@ -8,4 +8,4 @@ $heading = 'Main Notes';
 
 $notes = $db->query("select * from notes where user_id = 1")->get();
 
-require_once "views/notes.view.php";
+require_once "views/notes/index.view.php";
