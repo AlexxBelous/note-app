@@ -31,7 +31,7 @@ class Database
     {
         $result = $this->find();
         if(! $result) {
-            abort(Response::FORBIDDEN);
+            abort();
         }
         return $result;
     }
