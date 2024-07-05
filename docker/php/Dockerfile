@@ -16,4 +16,9 @@ RUN groupadd -g 1001 myuser && \
     usermod -aG sudo myuser && \
     echo 'myuser:mypass' | chpasswd
 
+# Создание папки и изменение прав доступа под пользователем root
+RUN mkdir -p /var/www/html/public && \
+    chown -R myuser:myuser /var/www/html
+
+# Переключение на myuser после настройки
 USER myuser
