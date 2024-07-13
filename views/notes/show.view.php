@@ -12,6 +12,7 @@
             <?php echo htmlspecialchars($note['body']) ?>
         </p>
         <form class="mt-5" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" value="<?php echo $note['id'] ?>" name="id" id="id">
             <button class="text-red-500">Delete Note</button>
         </form>
